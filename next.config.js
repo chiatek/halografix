@@ -7,8 +7,8 @@ module.exports = {
         API_DATABASE: process.env.API_DATABASE,
         API_USER: process.env.API_USER,
     },
-    // images: {
-    //     loader: 'imgix',
-    //     path: '',
-    // },
+    images: {
+        loader: 'imgix',
+        path: '',
+    },
 }
