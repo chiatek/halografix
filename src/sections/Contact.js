@@ -5,7 +5,7 @@ import Loading from "../components/Loading";
 class Contact extends Component {
     static contextType = DataContext;
 
-    url = process.env.FORM_API_URL;
+    url = process.env.CONTACT_API_URL;
     database = process.env.API_DATABASE;
     user = process.env.API_USER;
 
