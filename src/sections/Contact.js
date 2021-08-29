@@ -29,15 +29,17 @@ class Contact extends Component {
         })
     }
 
-    handleSubmit = () => {
-        this.setState({ loading: true }, () => {  
-            setTimeout(() => {
-               this.setState({ 
-                   iframe: true,
-                   loading: false 
-                });
-             }, 3000);
-        });
+    handleSubmit = (event) => {
+        // this.setState({ loading: true }, () => {  
+        //     setTimeout(() => {
+        //        this.setState({ 
+        //            iframe: true,
+        //            loading: false 
+        //         });
+        //      }, 3000);
+        // });
+
+        event.preventDefault();
     }
 
     render() {
@@ -58,10 +60,7 @@ class Contact extends Component {
                                 <div className="form-left">
                                     <h2>{contact.title}</h2>
                                     <p>{contact.content}</p>
-                                    <ul>
-                                        <li>Phone: {contact.phone}</li>
-                                        <li>Email: {contact.email}</li>
-                                    </ul>
+
                                     <div className="form-group">
                                         <label htmlFor="first_name">first name</label><br />
                                         <input 

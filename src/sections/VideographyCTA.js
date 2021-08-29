@@ -2,6 +2,7 @@ import { Component } from "react";
 import { DataContext } from "../context/AppData";
 import FormWizard from "../forms/FormWizard";
 import Faq from "../components/Faq";
+import ScrollTo from "../components/ScrollTo";
 
 class VideographyCTA extends Component {
     static contextType = DataContext;
@@ -62,6 +63,11 @@ class VideographyCTA extends Component {
         }
     }
 
+    handleClick = (event) => {
+        let section = document.querySelector(event.target.name);
+        ScrollTo(section, 1250, 65);
+    };
+
     render() {
         const [ context ] = this.context;
         let videography_cta = [];
@@ -76,7 +82,7 @@ class VideographyCTA extends Component {
                 <div className="container">
                     <h2>{videography_cta.heading}</h2>
                     <p>{videography_cta.content} <button className="link" id="videography-cta-faq" onClick={this.handleShow}>{videography_cta.link}</button></p>
-                    <button className="btn-primary" name={videography_cta.button_url} onClick={this.handleShow}>{videography_cta.button_text}</button>
+                    <button className="btn-primary" name={videography_cta.button_url} onClick={this.handleClick}>{videography_cta.button_text}</button>
                 </div>
 
                 <div className="modal" style={{display: this.state.form}}>

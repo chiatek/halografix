@@ -140,19 +140,20 @@ class FormWizard extends Component {
         event.preventDefault();
     }
 
-    handleSubmit = () => {
-        this.setState({ loading: true }, () => {  
-            setTimeout(() => {
-                this.setState((state) => ({
-                    page: state.page + 1,
-                    loading: false
-                }));
-             }, 3000);
-        });
+    handleSubmit = (event) => {
+        // this.setState({ loading: true }, () => {  
+        //     setTimeout(() => {
+        //         this.setState((state) => ({
+        //             page: state.page + 1,
+        //             loading: false
+        //         }));
+        //      }, 3000);
+        // });
 
-        document.querySelector("#videography-modal").scrollTo(0, 0);
-        document.querySelector("#livestream-modal").scrollTo(0, 0);
-        document.querySelector("#addon-modal").scrollTo(0, 0);
+        // document.querySelector("#videography-modal").scrollTo(0, 0);
+        // document.querySelector("#livestream-modal").scrollTo(0, 0);
+        // document.querySelector("#addon-modal").scrollTo(0, 0);
+        event.preventDefault();
     }
 
     handleClose = (event) => {

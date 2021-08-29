@@ -2,6 +2,7 @@ import { Component } from "react";
 import { DataContext } from "../context/AppData";
 import FormWizard from "../forms/FormWizard";
 import Faq from "../components/Faq";
+import ScrollTo from "../components/ScrollTo";
 
 class AddonCTA extends Component {
     static contextType = DataContext;
@@ -62,6 +63,11 @@ class AddonCTA extends Component {
         }
     }
 
+    handleClick = (event) => {
+        let section = document.querySelector(event.target.name);
+        ScrollTo(section, 1250, 65);
+    };
+
     render() {
         const [ context ] = this.context;
         let addon_cta = [];
@@ -76,7 +82,7 @@ class AddonCTA extends Component {
                 <div className="container">
                     <h2>{addon_cta.heading}</h2>
                     <p>{addon_cta.content} <button className="link" id="addon-cta-faq" onClick={this.handleShow}>{addon_cta.link}</button></p>
-                    <button className="btn-primary" name={addon_cta.button_url} onClick={this.handleShow}>{addon_cta.button_text}</button>
+                    <button className="btn-primary" name={addon_cta.button_url} onClick={this.handleClick}>{addon_cta.button_text}</button>
                 </div>
 
                 <div className="modal" style={{display: this.state.form}}>
